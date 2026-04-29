@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 import Proctor from "./proctor";
 import "./InterviewPage.css";
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API = process.env.REACT_APP_API_URL || "https://smartly-hire.vercel.app";
 const QUESTION_TIME = 5 * 60; // 5 minutes in seconds
 
 export default function InterviewPage() {

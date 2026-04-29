@@ -6,7 +6,7 @@ export default function JobList() {
   const [jobs, setJobs] = useState([]);
   const navigate = useNavigate();
 
-  const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API = process.env.REACT_APP_API_URL || "https://smartly-hire.vercel.app";
 
   useEffect(() => {
   fetch(`${API}/api/jobs`)

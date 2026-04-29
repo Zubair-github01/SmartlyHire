@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API = process.env.REACT_APP_API_URL || "https://smartly-hire.vercel.app";
 
 export default function CandidateAttemptsPage() {
   const { token } = useAuth();

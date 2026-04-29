@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import "./CandidateAttemptDetail.css";
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API = process.env.REACT_APP_API_URL || "https://smartly-hire.vercel.app";
 
 export default function CandidateAttemptDetail() {
   const { id } = useParams();

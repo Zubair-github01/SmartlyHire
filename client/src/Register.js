@@ -4,7 +4,7 @@ import { useAuth } from "./AuthContext";
 import "./Register.css";
 
 const API_BASE =
-  process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  process.env.REACT_APP_BACKEND_URL || "https://smartly-hire.vercel.app";
 
 const Register = () => {
   const { loginUser } = useAuth();

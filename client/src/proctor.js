@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./Proctor.css";
 
 // ✅ FIX: define API base once (this was causing: API_BASE is not defined)
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_API_URL || "https://smartly-hire.vercel.app";
 
 export default function Proctor({
   autoStart = false,

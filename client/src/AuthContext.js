@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   // ========== LOGIN USER (RENAMED FOR Login.js) ==========
   const loginUser = async (email, password) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("https://smartly-hire.vercel.app/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

@@ -1,0 +1,21 @@
+/* One consistent admin layout for ALL admin pages */
+.admin-layout {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 18px 18px 30px 0; /* left = 0 so sidebar stays extreme-left */
+  box-sizing: border-box;
+
+  /* Don't create a second scroll container */
+  min-height: calc(100vh - 88px); /* navbar approx height */
+  overflow: visible;
+}
+
+.admin-main-panel {
+  flex: 1;
+  min-width: 0; /* prevents overflow -> extra scrollbar */
+  padding: 10px 18px 40px;
+  box-sizing: border-box;
+}

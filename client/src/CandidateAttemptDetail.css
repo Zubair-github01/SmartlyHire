@@ -1,0 +1,73 @@
+.cand-detail-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 60px;
+  color: #e5e7eb;
+}
+
+.cand-detail-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.cand-detail-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.cand-detail-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.small { font-size: 0.86rem; }
+.muted { color: #94a3b8; }
+
+.cand-detail-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.cand-detail-card {
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.cand-detail-card .label { color: #9ca3af; font-weight: 700; font-size: 0.85rem; }
+.cand-detail-card .value { font-size: 1.35rem; font-weight: 900; margin-top: 2px; }
+
+.cand-detail-report {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 20px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.cand-qcard {
+  margin-top: 10px;
+  background: rgba(30, 41, 59, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 12px 14px;
+}
+
+.cand-qhead {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.qblock { margin: 8px 0; }
+.qblock .label { color: #cbd5e1; font-weight: 800; font-size: 0.9rem; }
+.qblock .text { color: #e5e7eb; margin-top: 2px; }

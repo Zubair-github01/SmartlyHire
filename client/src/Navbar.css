@@ -1,0 +1,169 @@
+/* Full-width wrapper so navbar can be sticky and have glow */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 8px 0;
+  background: linear-gradient(
+    90deg,
+    #070815 0%,
+    #111827 40%,
+    #1f2937 70%,
+    #0b1020 100%
+  );
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Glassy nav bar container */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.12)
+  );
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Left: logo */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e5e7eb;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 1.05rem;
+}
+
+.nav-logo-icon {
+  font-size: 1.4rem;
+}
+
+.nav-logo-text {
+  background: linear-gradient(120deg, #a5b4fc, #f9a8d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Center: links */
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  position: relative;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Active route highlight */
+.nav-link-active {
+  color: #f9fafb;
+  background: linear-gradient(120deg, #6366f1, #ec4899);
+  box-shadow: 0 0 18px rgba(99, 102, 241, 0.6);
+}
+
+/* Right: buttons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn {
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+
+/* Ghost button (outline) */
+.nav-btn-ghost {
+  color: #e5e7eb;
+  background: transparent;
+  border-color: rgba(148, 163, 184, 0.8);
+}
+
+.nav-btn-ghost:hover {
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 12px rgba(148, 163, 184, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Primary button (gradient) */
+.nav-btn-primary {
+  color: #0b1020;
+  background: linear-gradient(120deg, #a5b4fc, #f9a8d4);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.8);
+}
+
+.nav-btn-primary:hover {
+  box-shadow: 0 0 24px rgba(168, 85, 247, 1);
+  transform: translateY(-1px);
+}
+
+/* Responsive: collapse center links on small screens */
+@media (max-width: 768px) {
+  .navbar {
+    border-radius: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-center {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+
+  .nav-logo-text {
+    display: none; /* keep only icon on mobile */
+  }
+
+  .nav-right {
+    gap: 4px;
+  }
+
+  .nav-btn {
+    padding: 6px 10px;
+  }
+}

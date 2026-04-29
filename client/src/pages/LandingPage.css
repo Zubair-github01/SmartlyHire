@@ -1,0 +1,178 @@
+.lp{
+  min-height:100vh;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(168,85,247,.22), transparent 60%),
+              radial-gradient(900px 500px at 80% 20%, rgba(59,130,246,.18), transparent 55%),
+              radial-gradient(900px 600px at 50% 90%, rgba(236,72,153,.12), transparent 60%),
+              #070b16;
+  color:#e9eefc;
+}
+
+.lp-hero{ padding: 84px 18px 56px; }
+.lp-hero-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 34px 28px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(14px);
+}
+
+.lp-badge{
+  display:inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing:.2px;
+  color:#cbd5ff;
+  background: rgba(124,58,237,.16);
+  border: 1px solid rgba(124,58,237,.28);
+}
+
+.lp-title{
+  margin-top: 16px;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -.5px;
+}
+.lp-title-accent{
+  background: linear-gradient(90deg, #a855f7, #ec4899, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip:text;
+  color: transparent;
+}
+
+.lp-subtitle{
+  margin-top: 12px;
+  max-width: 720px;
+  color: rgba(233,238,252,.82);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.lp-cta{
+  margin-top: 18px;
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing:.2px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.08);
+  color: #e9eefc;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.lp-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  background: rgba(255,255,255,.10);
+}
+.lp-btn-primary{
+  border: none;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  box-shadow: 0 14px 36px rgba(236,72,153,.20);
+}
+.lp-btn-ghost{
+  background: rgba(0,0,0,.18);
+}
+
+.lp-stats{
+  margin-top: 22px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+.lp-stat{
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.lp-stat-num{ font-weight: 900; font-size: 18px; }
+.lp-stat-label{ color: rgba(233,238,252,.75); font-size: 13px; margin-top: 4px; }
+
+.lp-section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 54px 18px;
+}
+.lp-section-head h2{ font-size: 28px; letter-spacing: -.3px; }
+.lp-section-head p{ margin-top: 6px; color: rgba(233,238,252,.72); }
+
+.lp-grid{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+}
+.lp-card{
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.lp-card h3{ font-size: 16px; }
+.lp-card p{ margin-top: 8px; color: rgba(233,238,252,.74); line-height: 1.55; font-size: 14px; }
+
+.lp-steps{
+  margin-top: 18px;
+  display:grid;
+  gap: 10px;
+}
+.lp-step{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.lp-step span{
+  width: 26px; height:26px;
+  border-radius: 9px;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(90deg, #a855f7, #60a5fa);
+  font-weight: 900;
+}
+
+.lp-footer{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding: 18px;
+  margin-top: 26px;
+}
+.lp-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.lp-footer-muted{ color: rgba(233,238,252,.65); font-size: 13px; margin-top: 4px; }
+.lp-footer-links{
+  display:flex;
+  gap: 14px;
+}
+.lp-footer-links a{
+  color: rgba(233,238,252,.75);
+}
+.lp-footer-links a:hover{ color: #fff; }
+
+@media (max-width: 920px){
+  .lp-grid{ grid-template-columns: 1fr; }
+  .lp-title{ font-size: 36px; }
+  .lp-stats{ grid-template-columns: 1fr; }
+}

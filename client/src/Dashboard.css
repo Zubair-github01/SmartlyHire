@@ -1,0 +1,202 @@
+/* Dashboard page only (AdminLayout handles layout now) */
+.dashboard-page {
+  width: 100%;
+}
+
+/* Top title + subtitle */
+.dash-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: #e5e7eb;
+}
+
+.dash-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+/* Metrics row */
+.dash-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.dash-metric-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.dash-metric-label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.dash-metric-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f9fafb;
+}
+
+.dash-metric-foot {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Section title for proctor reports */
+.dash-section-title {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.dash-empty {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+/* Proctor report cards */
+.report-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.report-card {
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 18px;
+  padding: 14px 14px 10px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #e5e7eb;
+}
+
+.report-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.report-stats p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+}
+
+.integrity-score {
+  margin-top: 4px;
+}
+
+.report-video {
+  margin-top: 8px;
+  border-radius: 14px;
+}
+
+/* Event log */
+.event-log-box {
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+
+.event-log-box summary {
+  cursor: pointer;
+}
+
+.event-log {
+  margin-top: 4px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.event-item {
+  margin-bottom: 2px;
+}
+/* Top Scorers (Leaderboard) */
+.leader-grid {
+  margin-top: 8px;
+  display: grid;
+  gap: 12px;
+}
+
+.leader-card {
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #e5e7eb;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.leader-rank {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #0b1020;
+  background: linear-gradient(135deg, #f472b6, #818cf8, #38bdf8);
+  flex: 0 0 auto;
+}
+
+.leader-main {
+  width: 100%;
+}
+
+.leader-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f9fafb;
+}
+
+.leader-sub {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.leader-bars {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 52px;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f472b6, #818cf8, #38bdf8);
+}
+
+.bar-row b {
+  text-align: right;
+  color: #e5e7eb;
+  font-weight: 800;
+}

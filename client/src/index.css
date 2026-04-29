@@ -1,0 +1,75 @@
+/* ---- RESET ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- BASE / SCROLL FIX ---- */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+
+  /* Match your dark neon theme */
+  color: rgba(255, 255, 255, 0.88);
+  background: radial-gradient(1200px 700px at 20% 10%, rgba(120, 80, 255, 0.18), transparent 55%),
+              radial-gradient(900px 600px at 80% 30%, rgba(255, 0, 200, 0.12), transparent 55%),
+              linear-gradient(180deg, #070a14, #0b1224);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+}
+
+/* ---- LINKS ---- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---- OPTIONAL UTILITIES ---- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Better default form rendering */
+input, textarea, button {
+  font: inherit;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* only body scrolls */
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* IMPORTANT: App must NOT be a scroll container */
+.App {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+}
+
+/* Prevent nested wrappers from becoming scroll containers */
+.App > * {
+  overflow: visible;
+}

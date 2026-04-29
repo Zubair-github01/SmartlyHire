@@ -1,0 +1,195 @@
+/* -------- Full Page Background -------- */
+.register-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  position: relative;
+  overflow: hidden;
+}
+
+/* -------- Register Card -------- */
+.register-card {
+  width: 380px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  background: rgba(40, 40, 40, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+  animation: fadeIn 0.8s ease-in-out;
+  z-index: 2;
+}
+
+.register-card h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* -------- Input Group -------- */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+/* -------- Button -------- */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* -------- Error Box -------- */
+.error-box {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff8a8a;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* -------- Login Switch Text -------- */
+.switch-text {
+  margin-top: 15px;
+  color: #ccc;
+}
+
+.switch-text a {
+  color: #4facfe;
+  text-decoration: none;
+}
+
+/* -------- Floating Shapes (background) -------- */
+.floating-shapes .shape {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, #00f2fe55, #4facfe55);
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.shape:nth-child(1) {
+  top: 10%;
+  left: 15%;
+}
+.shape:nth-child(2) {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+.shape:nth-child(3) {
+  top: 50%;
+  right: 40%;
+  animation-delay: 3s;
+}
+
+/* -------- Animations -------- */
+@keyframes float {
+  from {
+    transform: translateY(0px) scale(1);
+  }
+  to {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* --- Register select fix (Candidate/Admin dropdown) --- */
+.register-card select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  appearance: none; /* removes default arrow in some browsers */
+}
+
+/* Focus glow like your project theme */
+.register-card select:focus {
+  border-color: rgba(168, 85, 247, 0.9);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+}
+
+/* IMPORTANT: option styling fixes the unreadable dropdown list */
+.register-card select option {
+  background: #0b1220; /* dark dropdown list */
+  color: #e5e7eb;      /* readable text */
+}
+
+/* Optional: hover (some browsers ignore this) */
+.register-card select option:hover {
+  background: #111a2e;
+}
+
+/* If you want a custom arrow (optional) */
+.register-card .input-group {
+  position: relative;
+}
+
+.register-card .input-group select {
+  padding-right: 40px;
+}
+
+.register-card .input-group::after {
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  top: 42px; /* adjust if your label spacing differs */
+  color: rgba(229, 231, 235, 0.7);
+  pointer-events: none;
+}
+

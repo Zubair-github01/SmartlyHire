@@ -1,0 +1,474 @@
+/* client/src/InterviewPage.css */
+
+.interview-page {
+  min-height: calc(100vh - 20px);
+  padding: 20px 10px 40px;
+  color: #e5e7eb;
+}
+
+.interview-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.interview-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ---------- Generic cards / effects ---------- */
+.ip-card,
+.question-card,
+.ip-start-card,
+.ip-alert-card,
+.ip-loader-card {
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 22px;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+}
+
+.ip-card {
+  overflow: hidden;
+  position: sticky;
+  top: 92px; /* under navbar */
+}
+
+.ip-card-head {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.ip-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #f3f4f6;
+}
+
+.ip-card-subtitle {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: rgba(203, 213, 225, 0.75);
+}
+
+.ip-proctor-wrap {
+  padding: 12px;
+}
+
+.ip-proctor-wrap.live {
+  position: relative;
+}
+.ip-proctor-wrap.live::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  box-shadow: 0 0 0 1px rgba(147, 51, 234, 0.18), 0 0 38px rgba(236, 72, 153, 0.12);
+}
+
+.ip-help {
+  padding: 14px 16px 16px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.ip-help-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.12);
+  color: rgba(226, 232, 240, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.ip-help-badge.live {
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.22);
+  color: rgba(253, 164, 175, 0.95);
+}
+
+.ip-help-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(226, 232, 240, 0.82);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.ip-help-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+/* ---------- Right panel ---------- */
+.interview-qa-panel {
+  min-height: 420px;
+}
+
+/* Start screen */
+.interview-start-screen {
+  padding: 10px;
+}
+
+.ip-hero {
+  padding: 8px 4px 14px;
+}
+
+.ip-hero-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+  color: #f8fafc;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.ip-hero-sub {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: rgba(203, 213, 225, 0.85);
+  max-width: 900px;
+}
+
+/* Start card */
+.ip-start-card {
+  margin-top: 16px;
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ip-start-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle at 15% 20%, rgba(236, 72, 153, 0.28), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.22), transparent 40%),
+    radial-gradient(circle at 50% 120%, rgba(59, 130, 246, 0.18), transparent 55%);
+  pointer-events: none;
+}
+
+.ip-start-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ip-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(226, 232, 240, 0.82);
+  margin-bottom: 8px;
+}
+
+.ip-name-input {
+  width: 100%;
+  max-width: 560px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: rgba(2, 6, 23, 0.55);
+  color: #e5e7eb;
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.ip-name-input::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.ip-name-input:focus {
+  border: 1px solid rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.12);
+  transform: translateY(-1px);
+}
+
+.ip-start-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ip-start-hint {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(203, 213, 225, 0.8);
+}
+
+/* ---------- Interview header + timer ---------- */
+.interview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 10px 6px 14px;
+}
+
+.ip-h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #f8fafc;
+}
+
+.ip-p {
+  margin: 6px 0 0;
+  color: rgba(203, 213, 225, 0.85);
+  max-width: 900px;
+}
+
+.ip-timer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.ip-timer-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.95), rgba(147, 51, 234, 0.7));
+  box-shadow: 0 0 18px rgba(236, 72, 153, 0.35);
+}
+
+.ip-timer-text {
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  color: rgba(226, 232, 240, 0.95);
+}
+
+/* ---------- Question card ---------- */
+.question-card {
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  margin: 0 6px;
+}
+
+.question-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.qm-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(148, 163, 184, 0.08);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.qm-pill.soft {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.22);
+}
+
+.qm-pill.ok {
+  background: rgba(147, 51, 234, 0.12);
+  border-color: rgba(147, 51, 234, 0.22);
+}
+
+.qm-pill.danger {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.22);
+  color: rgba(254, 202, 202, 0.95);
+}
+
+.question-text {
+  margin: 0 0 12px;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: rgba(248, 250, 252, 0.95);
+  line-height: 1.4;
+}
+
+/* Answer box: futuristic */
+.answer-input {
+  width: 100%;
+  resize: vertical;
+  min-height: 220px;
+  padding: 14px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: radial-gradient(circle at 20% 0%, rgba(236, 72, 153, 0.08), transparent 35%),
+    radial-gradient(circle at 85% 25%, rgba(147, 51, 234, 0.08), transparent 35%),
+    rgba(2, 6, 23, 0.55);
+  color: #e5e7eb;
+  outline: none;
+  line-height: 1.6;
+  transition: box-shadow 0.15s ease, border 0.15s ease, transform 0.15s ease;
+}
+
+.answer-input::placeholder {
+  color: rgba(148, 163, 184, 0.72);
+}
+
+.answer-input:focus {
+  border: 1px solid rgba(236, 72, 153, 0.52);
+  box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.12), 0 22px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.answer-input.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  letter-spacing: 0.1px;
+}
+
+/* ---------- Buttons: pink/purple neon ---------- */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 14px 6px 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  appearance: none;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(2, 6, 23, 0.55);
+  color: rgba(226, 232, 240, 0.92);
+  padding: 11px 16px;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 130px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+}
+
+.nav-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(236, 72, 153, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 40px rgba(236, 72, 153, 0.12);
+}
+
+.nav-btn:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+.nav-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.nav-btn.primary,
+.nav-btn.submit {
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.95), rgba(147, 51, 234, 0.95));
+  color: #0b1020;
+  box-shadow: 0 18px 45px rgba(147, 51, 234, 0.22), 0 0 40px rgba(236, 72, 153, 0.15);
+}
+
+.nav-btn.primary:hover,
+.nav-btn.submit:hover {
+  box-shadow: 0 26px 70px rgba(147, 51, 234, 0.25), 0 0 60px rgba(236, 72, 153, 0.2);
+}
+
+.error {
+  color: rgba(248, 113, 113, 0.95);
+  margin-top: 10px;
+}
+
+.error.small {
+  margin: 12px 6px 0;
+  font-size: 0.92rem;
+}
+
+/* ---------- Center cards (loading/error) ---------- */
+.ip-center {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.ip-alert-card,
+.ip-loader-card {
+  width: min(720px, 96vw);
+  padding: 22px 22px 20px;
+  border-radius: 22px;
+  text-align: left;
+}
+
+.ip-alert-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.ip-alert-text {
+  color: rgba(203, 213, 225, 0.85);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.ip-loader-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #f8fafc;
+  margin-top: 12px;
+}
+
+.ip-loader-sub {
+  color: rgba(203, 213, 225, 0.8);
+  margin-top: 4px;
+}
+
+.ip-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 3px solid rgba(148, 163, 184, 0.25);
+  border-top-color: rgba(236, 72, 153, 0.9);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .interview-layout {
+    grid-template-columns: 1fr;
+  }
+  .ip-card {
+    position: relative;
+    top: 0;
+  }
+}
